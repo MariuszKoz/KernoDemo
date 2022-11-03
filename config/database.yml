@@ -1,4 +1,3 @@
-
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -7,10 +6,12 @@ default: &default
 development:
   <<: *default
   database: Kerno_Demo_development
+  username: kokos
 
 test:
   <<: *default
   database: Kerno_Demo_test
+  username: kokos
 
 production:
   <<: *default
