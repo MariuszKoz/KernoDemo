@@ -1,7 +1,45 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+if Rails.env.development?
+  User.create!(email: 'luke.skywalker@example.com', admin: true, superadmin: true, password: 'haslo123', password_confirmation: 'haslo123')
+  User.create!(email: 'obi.wan@example.com', admin: true, superadmin: false, password: 'haslo123', password_confirmation: 'haslo123')
+
+  store_1 = Store.create!(store_name: 'Sklep u Jędrzeja', phone_number: '852852852', street_name: 'Wspaniała',
+                          building_number: '78A', apartment_number: '13', city: 'Rzeszów', post_code: '11-100',
+                          country: 'Poland', nip: '789-852-26-25')
+  store_2 = Store.create!(store_name: 'Sklep u Andrzeja', phone_number: '741852963', street_name: 'Oszałamiająca',
+                          building_number: '13', apartment_number: nil, city: 'Olsztyn', post_code: '20-222',
+                          country: 'Poland', nip: '456-456-25-25')
+                       
+  User.create!(first_name: 'Jędrzej', last_name: 'Olbrachczyk', phone_number: '456-456-459',
+               street_name: 'Krzywa', building_number: '33F', apartment_number: '8', city: 'Orzysz', post_code: '12-251',
+               country: 'Poland', email: 'jedrzej.olbrachczyk@kerno.pl', password: "rudalala", store_id: store_1.id,
+               active: true, supervisor: true)
+  User.create!(first_name: 'Andrzej', last_name: 'Kiszony', phone_number: '963-963-963',
+               street_name: 'Prosta', building_number: '2', apartment_number: nil, city: 'Olsztyn', post_code: '20-222',
+               country: 'Poland', email: 'andrzej.kiszony@kerno.com', password: "rudalala", store_id: store_2.id,
+               active: true, supervisor: true)
+
+  Client.create!(first_name: 'Czesław', last_name: 'Kilof', phone_number: '456789123', street_name: 'Językowa',
+                 building_number: '12', apartment_number: '124', city: 'Leszno', post_code: '12-123', country: 'Poland',
+                 store_id: store_1.id)
+  Client.create!(first_name: 'Jarek', last_name: 'Zdrowy', phone_number: '445588668', street_name: 'Zielona',
+                 building_number: '10', apartment_number: '50', city: 'Augustów', post_code: '16-300', country: 'Poland',
+                 store_id: store_2.id)
+
+  door_group_1 = DoorGroup.create!(name: "Drzwi Wewnętrzne")
+  door_group_2 = DoorGroup.create!(name: "Drzwi Zewnętrzne")
+
+  door_collection_1 = DoorCollection.create!(collection_name: "PINUS", door_group_id: door_group_1.id)
+  door_collection_2 = DoorCollection.create!(collection_name: "FREX", door_group_id: door_group_2.id)
+
+  DoorModel.create!(name: "Pinus1", door_group_id: door_group_1.id, door_collection_id: door_collection_1.id)
+  DoorModel.create!(name: "Pinus2", door_group_id: door_group_2.id, door_collection_id: door_collection_2.id)
+
+  DoorType.create!(type_name: "Bezprzylgowe", door_group_id: door_group_1.id)
+  DoorType.create!(type_name: "Ukryte", door_group_id: door_group_2.id)
+
+  DoorLayout.create!(layout_name: "Pojedyńcze", door_group_id: door_group_1.id)
+  DoorLayout.create!(layout_name: "Dwuskrzydłowe", door_group_id: door_group_2.id)
+
+  OpeningType.create!(opening_type_name: "Lew/Zew", door_group_id: door_group_1.id)
+  OpeningType.create!(opening_type_name: "Praw/Zew", door_group_id: door_group_2.id)
+end
