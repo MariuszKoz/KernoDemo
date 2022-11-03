@@ -19,7 +19,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
 
-      t.references :store, index: true, null: false, foreign_key: true
+      t.references :store, index: true, null: true, foreign_key: true
 
       t.datetime :remember_created_at
 
