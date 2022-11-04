@@ -139,7 +139,6 @@ GEM
       activesupport (>= 5.0.0)
     faker (3.0.0)
       i18n (>= 1.8.11, < 2)
-    ffi (1.15.5)
     fugit (1.7.2)
       et-orbi (~> 1, >= 1.2.7)
       raabro (~> 1.4)
@@ -162,15 +161,6 @@ GEM
       grape-swagger (>= 1.2.0)
     grape-swagger-rails (0.3.1)
       railties (>= 3.2.12)
-    haml (6.0.8)
-      temple (>= 0.8.2)
-      thor
-      tilt
-    haml-rails (2.1.0)
-      actionpack (>= 5.1)
-      activesupport (>= 5.1)
-      haml (>= 4.0.6)
-      railties (>= 5.1)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     iniparse (1.5.0)
@@ -313,14 +303,6 @@ GEM
     rubyzip (2.3.2)
     rufus-scheduler (3.8.2)
       fugit (~> 1.1, >= 1.1.6)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     selenium-webdriver (4.5.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -346,7 +328,6 @@ GEM
       railties (>= 6.0.0)
     strong_migrations (1.4.0)
       activerecord (>= 5.2)
-    temple (0.9.1)
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.0)
@@ -397,7 +378,6 @@ DEPENDENCIES
   grape-swagger
   grape-swagger-entity
   grape-swagger-rails
-  haml-rails (~> 2.0)
   jbuilder
   jsbundling-rails
   overcommit
@@ -412,7 +392,6 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   rubocop-rspec
-  sassc-rails
   selenium-webdriver
   sidekiq
   sidekiq-scheduler
