@@ -11,4 +11,7 @@ Rails.application.routes.draw do
 
   get '/admin', to: "admin_panel#index", as: :admin
   
+  scope module: 'admin', path: 'admin', as: 'admin' do
+    resources :users, :orders, :dictionaries, :products
+  end
 end
