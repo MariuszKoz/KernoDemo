@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %title KernoDemo
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag "application_admin", "data-turbo-track": "reload" 
+    = javascript_tag "application", "data-turbo-track": "reload", defer: true 
+  
+  %body
+    = yield
