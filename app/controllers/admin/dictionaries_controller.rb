@@ -1,7 +1,9 @@
-class DictionariesController < AdminPanelController
+module Admin
+  class DictionariesController < AdminPanelController
 
-  def index
-    
+    def index
+
+    end
+
   end
-  
 end
