@@ -1,0 +1,24 @@
+_fixture:
+  model_class: DoorCollection
+
+#belongs to interior door group
+pinus:
+  id: 1
+  collection_name: "PINUS"
+  door_group_id: 1
+
+celtis:
+  id: 2
+  collection_name: "CELTIS"
+  door_group_id: 1
+
+kiddo:
+  id: 3
+  collection_name: "KIDDO"
+  door_group_id: 1
+
+#belongs to external door group
+frax:
+  id: 4
+  collection_name: "FRAX"
+  door_group_id: 2
