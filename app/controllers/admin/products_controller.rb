@@ -1,6 +1,9 @@
-class ProductsController < AdminPanelController
+module Admin
+  class ProductsController < AdminPanelController
 
-  def index
+    def index
+
+    end
+
   end
-  
 end

@@ -1,7 +1,9 @@
-class OrdersController < AdminPanelController
+module Admin
+  class OrdersController < AdminPanelController
 
-  def index
+    def index
+
+    end
 
   end
-
 end
