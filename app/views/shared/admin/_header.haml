@@ -5,7 +5,7 @@
       = "Zalogowany jako: #{current_user.first_name} #{current_user.last_name}"
   .admin__header-links{style: "width: 60%; float: right; text-align: end; margin-right: 25px;"}
     = link_to "OFERTY I ZAMÓWIENIA", admin_orders_path, style: "text-decoration: none; color: black; font-size: 14px; margin-left: 15px;"
-    = link_to "SŁOWNIKI", admin_dictionaries_path, style: "text-decoration: none; color: black; font-size: 14px; margin-left: 15px;"
+    = link_to "SŁOWNIKI", admin_door_group_path(DoorGroup.first), style: "text-decoration: none; color: black; font-size: 14px; margin-left: 15px;"
     = link_to "PRODUKTY", admin_products_path, style: "text-decoration: none; color: black; font-size: 14px; margin-left: 15px;"
     = link_to "UŻYTKOWNICY", admin_users_path, style: "text-decoration: none; color: black; font-size: 14px; margin-left: 15px;"
     = button_to "WYLOGUJ", destroy_user_session_path, method: :delete, data: { confirm: "Czy napewno chcesz się wylogować ?"}
