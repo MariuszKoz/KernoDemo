@@ -1,0 +1,46 @@
+_fixture:
+  model_class: DoorModel
+
+#belongs to Pinus collection
+pinus1:
+  id: 1
+  name: "Pinus 1"
+  door_collection_id: 1
+
+pinus2:
+  id: 2
+  name: "Pinus 2"
+  door_collection_id: 1
+
+#belongs to Celtis collection
+celtis1:
+  id: 3
+  name: "Celtis 1"
+  door_collection_id: 2
+
+celtis2:
+  id: 4
+  name: "Celtis 2"
+  door_collection_id: 2
+
+#belongs to Kiddo collection
+kiddo1:
+  id: 5
+  name: "Kiddo1"
+  door_collection_id: 3
+
+kiddo2:
+  id: 6
+  name: "Kiddo2"
+  door_collection_id: 3
+
+#belongs to Frax collection
+frax1:
+  id: 7
+  name: "Frax1"
+  door_collection_id: 4
+
+frax2:
+  id: 8
+  name: "Frax2"
+  door_collection_id:  4
