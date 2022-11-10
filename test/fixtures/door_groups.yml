@@ -1,0 +1,30 @@
+_fixture:
+  model_class: DoorGroup
+
+internal_doors:
+  id: 1
+  name: "Drzwi wewnętrzne"
+
+external_doors:
+  id: 2
+  name: "Drzwi zewnętrzne"
+
+slide_doors:
+  id: 3
+  name: "Drzwi przesuwne"
+
+lumosteel_doors:
+  id: 4
+  name: "Lumosteel"
+
+lumosteel_slide_doors:
+  id: 5
+  name: "Lumosteel suwane"
+
+panels:
+  id: 6
+  name: "Panele"
+
+lamels:
+  id: 7
+  name: "Lamels"

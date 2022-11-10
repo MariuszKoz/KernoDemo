@@ -9,18 +9,22 @@ if Rails.env.development?
                           country: 'Poland', nip: '456-456-25-25')
 
   # create admin and superadmin
-  User.create!(email: 'luke.skywalker@example.com', admin: true, superadmin: true, store_id: nil, password: 'haslo123', password_confirmation: 'haslo123')
-  User.create!(email: 'obi.wan@example.com', admin: true, superadmin: false, store_id: nil, password: 'haslo123', password_confirmation: 'haslo123')
+  admin = User.create!(email: 'luke.skywalker@example.com', store_id: nil, password: 'haslo123', password_confirmation: 'haslo123')
+  super_admin = User.create!(email: 'obi.wan@example.com', store_id: nil, password: 'haslo123', password_confirmation: 'haslo123')
+  admin_role = Role.create!(name: 'admin')
+  super_admin_role = Role.create!(name: 'super_admin')
+  RolesUser.create!(user_id: admin.id, role_id: admin_role.id)
+  RolesUser.create!(user_id: super_admin.id, role_id: super_admin_role.id)
   
   # create users belongs_to store
   User.create!(first_name: 'Jędrzej', last_name: 'Olbrachczyk', phone_number: '456-456-459',
                street_name: 'Krzywa', building_number: '33F', apartment_number: '8', city: 'Orzysz', post_code: '12-251',
                country: 'Poland', email: 'jedrzej.olbrachczyk@kerno.pl', password: "rudalala", store_id: store_1.id,
-               active: true, supervisor: true)
+               active: true)
   User.create!(first_name: 'Andrzej', last_name: 'Kiszony', phone_number: '963-963-963',
                street_name: 'Prosta', building_number: '2', apartment_number: nil, city: 'Olsztyn', post_code: '20-222',
                country: 'Poland', email: 'andrzej.kiszony@kerno.com', password: "rudalala", store_id: store_2.id,
-               active: true, supervisor: true)
+               active: true)
 
   # create clients belongs_to store
   Client.create!(first_name: 'Czesław', last_name: 'Kilof', phone_number: '456789123', street_name: 'Językowa',

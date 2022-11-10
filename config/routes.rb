@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  # root "admin#index"
 
   get '/admin', to: "admin_panel#index", as: :admin
   
   scope module: 'admin', path: 'admin', as: 'admin' do
-    resources :users, :orders, :dictionaries, :products
+    resources :users, :orders, :products, :door_groups, :door_collections
   end
 end
